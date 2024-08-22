@@ -20,11 +20,11 @@ const Member: React.FC<MemberProps> = ({ firstName, lastName, avatar, checkIn })
           checkIn ? 'border-green-400' : 'border-red-500'
         }`}
       />
-      <div>
-        <h2>
-          {firstName} {lastName}
-        </h2>
-      </div>
+      {/*<div>*/}
+      {/*  <h2>*/}
+      {/*    {firstName} {lastName}*/}
+      {/*  </h2>*/}
+      {/*</div>*/}
     </div>
   );
 };

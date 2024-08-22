@@ -75,23 +75,26 @@ export default function PresentMembersSection() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-1">
       {error && <p>{error}</p>}
       <RealTime updateCheckInStatus={updateCheckInStatus} />
-      <div className="grid grid-cols-20 gap-3">
-        {members.length > 0 ? (
-          members.map((member) => (
-            <Member
-              key={member.id}
-              firstName={member.firstName}
-              lastName={member.lastName}
-              avatar={member.avatar}
-              checkIn={member.checkIn}
-            />
-          ))
-        ) : (
-          <p>No members found</p>
-        )}
+      <p className="text-2xl font-semibold text-cyan-500">Members</p>
+      <div className="rounded-2xl border-2 border-cyan-500 p-4">
+        <div className="grid grid-cols-20 gap-3">
+          {members.length > 0 ? (
+            members.map((member) => (
+              <Member
+                key={member.id}
+                firstName={member.firstName}
+                lastName={member.lastName}
+                avatar={member.avatar}
+                checkIn={member.checkIn}
+              />
+            ))
+          ) : (
+            <p>No members found</p>
+          )}
+        </div>
       </div>
     </div>
   );

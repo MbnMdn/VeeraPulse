@@ -1,23 +1,31 @@
-import HeaderCard from './HeaderCard';
-import ProgressCard from './ProgressCard';
+import Chart from './Chart';
 
 export default function ProjectsTable() {
   return (
-    <div className="grid grid-cols-7 gap-4">
-      <HeaderCard title="AI" />
-      <HeaderCard title="XBOX" />
-      <HeaderCard title="App" />
-      <HeaderCard title="Backend" />
-      <HeaderCard title="Design" />
-      <HeaderCard title="Frontend" />
-      <HeaderCard title="Total" />
+    <div className="grid grid-cols-3 gap-10">
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
 
-      <ProgressCard />
-      <ProgressCard />
-      <ProgressCard />
-      <ProgressCard />
-      <ProgressCard />
-      <ProgressCard />
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
+
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
+
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
+
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
+
+      <div className="max-w-3xl">
+        <Chart />
+      </div>
     </div>
   );
 }

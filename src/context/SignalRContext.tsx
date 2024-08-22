@@ -1,5 +1,5 @@
 import { HubConnection } from '@microsoft/signalr';
-import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import { createHubConnection } from '../signalR/signalRHub';
 
