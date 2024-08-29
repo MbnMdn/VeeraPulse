@@ -12,19 +12,14 @@ interface MemberProps {
 
 const Member: React.FC<MemberProps> = ({ firstName, lastName, avatar, checkIn }) => {
   return (
-    <div className="flex flex-col items-center space-x-4">
+    <div className="flex flex-col items-center space-x-4 ">
       <img
         src={ENV.apiUrl + avatar || defaultAvatar}
         alt="avatar"
-        className={`rounded-full border-2 ${
-          checkIn ? 'border-green-400' : 'border-red-500'
+        className={`rounded-full border-4 ${
+          checkIn ? 'border-green-600' : 'border-red-500'
         }`}
       />
-      {/*<div>*/}
-      {/*  <h2>*/}
-      {/*    {firstName} {lastName}*/}
-      {/*  </h2>*/}
-      {/*</div>*/}
     </div>
   );
 };

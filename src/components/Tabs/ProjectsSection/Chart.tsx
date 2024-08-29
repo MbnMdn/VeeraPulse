@@ -55,11 +55,7 @@ const Chart: React.FC = () => {
     },
   };
 
-  return (
-    <div className="rounded-2xl border-2 border-cyan-700 p-4">
-      <Bar data={data} options={options} />
-    </div>
-  );
+  return <Bar data={data} options={options} />;
 };
 
 export default Chart;

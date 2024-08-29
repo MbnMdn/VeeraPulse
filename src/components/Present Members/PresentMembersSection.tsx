@@ -22,7 +22,7 @@ export default function PresentMembersSection() {
     const fetchMembers = async () => {
       try {
         // Fetch the members data
-        const response = await api.get('http://192.168.100.162/api/v1/Staff/All', {
+        const response = await api.get(ENV.apiUrl + '/api/v1/Staff/All', {
           params: {
             Branch: '54d5ca8b-37ad-4217-ab03-6ce94431747a',
             Department: '9e565460-b443-48c7-b237-06f5a2077a5a',
@@ -36,9 +36,12 @@ export default function PresentMembersSection() {
 
         // Fetch the check-in data
         const allMembers = await api.get(
-          'http://192.168.100.162:8080/api/v1/StaffAttendance/LastSeen',
+          ENV.apiUrl + '/api/v1/StaffAttendance/LastSeen',
           {
             params: {},
+            headers: {
+              Authorization: ENV.lastSeenToken,
+            },
           },
         );
 
@@ -78,9 +81,9 @@ export default function PresentMembersSection() {
     <div className="flex flex-col gap-1">
       {error && <p>{error}</p>}
       <RealTime updateCheckInStatus={updateCheckInStatus} />
-      <p className="text-2xl font-semibold text-cyan-500">Members</p>
-      <div className="rounded-2xl border-2 border-cyan-500 p-4">
-        <div className="grid grid-cols-20 gap-3">
+      {/*<p className="text-2xl font-semibold text-cyan-500">Members</p>*/}
+      <div className="rounded-2xl  p-4">
+        <div className="grid grid-cols-20 gap-3  ">
           {members.length > 0 ? (
             members.map((member) => (
               <Member
