@@ -13,13 +13,15 @@ interface MemberProps {
 const Member: React.FC<MemberProps> = ({ firstName, lastName, avatar, checkIn }) => {
   return (
     <div className="flex flex-col items-center space-x-4 ">
-      <img
-        src={ENV.apiUrl + avatar || defaultAvatar}
-        alt="avatar"
-        className={`rounded-full border-4 ${
-          checkIn ? 'border-green-600' : 'border-red-500'
-        }`}
-      />
+      <a href={'http://192.168.100.162/account/workingTime'}>
+        <img
+          src={ENV.apiUrl + avatar || defaultAvatar}
+          alt="avatar"
+          className={`rounded-full border-4 ${
+            checkIn ? 'border-green-600' : 'border-red-500'
+          }`}
+        />
+      </a>
     </div>
   );
 };

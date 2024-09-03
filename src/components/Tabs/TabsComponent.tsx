@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { SyntheticEvent, useState } from 'react';
 
 import ProjectsSection from './ProjectsSection/ProjectsSection';
+import Slider from './ProjectsSection/Slider';
 export default function TabsComponent() {
   const [value, setValue] = useState(0);
 
@@ -55,8 +56,11 @@ export default function TabsComponent() {
       <TabPanel value={value} index={0}>
         <ProjectsSection />
       </TabPanel>
+
       <TabPanel value={value} index={1}>
-        Item Two
+        <div>
+          <Slider />
+        </div>
       </TabPanel>
     </div>
   );

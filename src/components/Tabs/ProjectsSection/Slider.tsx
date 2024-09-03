@@ -3,7 +3,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './styles.css';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -16,12 +16,12 @@ export default function Slider() {
     // progressContent?.current?.textContent = `${Math.ceil(time / 1000)}s`;
   };
   return (
-    <div className="h-full">
+    <div>
       <Swiper
-        spaceBetween={30}
+        spaceBetween={100}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{

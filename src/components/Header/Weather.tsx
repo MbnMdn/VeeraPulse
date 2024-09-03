@@ -66,7 +66,7 @@ const Weather: React.FC = () => {
           <span className="text-3xl">☁️️</span>
         </div>
       );
-    } else if (weather.includes('Clear')) {
+    } else if (weather.includes('clear')) {
       return <p className="text-lg font-semibold text-cyan-600">{weather + ' '}️☀️</p>;
     }
     return null;
